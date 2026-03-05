@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruffle Iframe</title>
+    <script defer src="main.js"></script>
     
 </head>
 
@@ -13,19 +14,7 @@
         
     </div>
         
-    <script>
-        var swf_url = "SSF2BetaWindows.v.1.4.0.1.portable/SSF2Portable.swf"
-        window.RufflePlayer = window.RufflePlayer || {};
-        window.addEventListener("load", (event) => {
-            const ruffle = window.RufflePlayer.newest();
-            const player = ruffle.createPlayer();
-            // player.style.width = "600px"; 
-            // player.style.height = "400px";
-            const container = document.getElementById("container");
-            container.appendChild(player);
-            player.ruffle().load(swf_url);
-        });
-    </script>
+
     <script src="ruffle-nightly-2026_03_04-web-selfhosted/ruffle.js"></script>
 </body>
 </html>
