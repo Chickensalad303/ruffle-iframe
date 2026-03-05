@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruffle Iframe</title>
-    <script src="<https://unpkg.com/@ruffle-rs/ruffle"></script>
+    
 </head>
 
 <body>
     <p>test</p>
-    <ruffle-player class="swf" src="https://chickensalad303.github.io/ruffle-iframe/SSF2BetaWindows.v.1.4.0.1.portable/SSF2Portable.swf" width="480" height="480"></ruffle-player>
+    <ruffle-player class="swf" width="480" height="480"></ruffle-player>
     
         
+    <script>
+        var swf_url = "https://chickensalad303.github.io/ruffle-iframe/SSF2BetaWindows.v.1.4.0.1.portable/SSF2Portable.swf"
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("container");
+            container.appendChild(player);
+            player.ruffle().load(swf_url);
+        });
+    </script>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 </body>
 </html>
 
